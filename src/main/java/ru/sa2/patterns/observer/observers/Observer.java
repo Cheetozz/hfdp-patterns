@@ -6,5 +6,5 @@ package ru.sa2.patterns.observer.observers;
  * email-work:  aleksandrsmirnov@at-consulting.ru
  */
 public interface Observer {
-    void update();
+    void update(float temp, float hour, float humidity);
 }
