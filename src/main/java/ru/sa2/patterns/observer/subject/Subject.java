@@ -1,6 +1,6 @@
 package ru.sa2.patterns.observer.subject;
 
-import ru.sa2.patterns.observer.observers.Observer;
+import ru.sa2.patterns.observer.observers.ObserverCustom;
 
 /**
  * Created by Alexander Smirnov on 14.12.2015.
@@ -8,8 +8,8 @@ import ru.sa2.patterns.observer.observers.Observer;
  * email-work:  aleksandrsmirnov@at-consulting.ru
  */
 public interface Subject {
-    void registerObserver(Observer... o);
-    void removeObserver(Observer o);
+    void registerObserver(ObserverCustom... o);
+    void removeObserver(ObserverCustom o);
     void notifyObservers();
 
 }

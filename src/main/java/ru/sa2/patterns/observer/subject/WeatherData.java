@@ -1,45 +1,30 @@
 package ru.sa2.patterns.observer.subject;
 
-import ru.sa2.patterns.observer.observers.Observer;
+
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Observable;
+import java.util.Observer;
 
 /**
  * Created by Alexander Smirnov on 14.12.2015.
  * email:       alexander@pingala.ru
  * email-work:  aleksandrsmirnov@at-consulting.ru
  */
-public class WeatherData  implements Subject {
+public class WeatherData extends Observable {
     private List<Observer> observers;
-    float temperature;
-    float hour;
-    float humidity;
+    private float temperature;
+    private float hour;
+    private float humidity;
 
 
     public WeatherData() {
         observers = new ArrayList<>();
     }
 
-    @Override
-    public void registerObserver(Observer... o) {
-        for (Observer insert : o)
-            observers.add(insert);
-    }
-
-    @Override
-    public void removeObserver(Observer o) {
-        int index = observers.indexOf(o);
-        if (index >= 0)
-            observers.remove(index);
-    }
-
-    @Override
-    public void notifyObservers() {
-        for (Observer o : observers)
-            o.update(temperature, hour, humidity);
-    }
     public void measureChanged() {
+        setChanged();
         notifyObservers();
     }
 
@@ -48,5 +33,17 @@ public class WeatherData  implements Subject {
         this.hour = hour;
         this.humidity = humidity;
         measureChanged();
+    }
+
+    public float getTemperature() {
+        return temperature;
+    }
+
+    public float getHour() {
+        return hour;
+    }
+
+    public float getHumidity() {
+        return humidity;
     }
 }

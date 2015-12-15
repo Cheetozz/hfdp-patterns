@@ -5,6 +5,6 @@ package ru.sa2.patterns.observer.observers;
  * email:       alexander@pingala.ru
  * email-work:  aleksandrsmirnov@at-consulting.ru
  */
-public interface Observer {
+public interface ObserverCustom {
     void update(float temp, float hour, float humidity);
 }
