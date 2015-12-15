@@ -5,5 +5,10 @@ package ru.sa2.patterns.observer.observers;
  * email:       alexander@pingala.ru
  * email-work:  aleksandrsmirnov@at-consulting.ru
  */
-public class TemperatureDisplay {
+public class TemperatureDisplay implements Observer {
+
+    @Override
+    public void update(float temp, float hour, float humidity) {
+        System.out.println("Hello I'm Temperature. Hour: " + hour);
+    }
 }

@@ -8,7 +8,7 @@ import ru.sa2.patterns.observer.observers.Observer;
  * email-work:  aleksandrsmirnov@at-consulting.ru
  */
 public interface Subject {
-    void registerObserver(Observer o);
+    void registerObserver(Observer... o);
     void removeObserver(Observer o);
     void notifyObservers();
 
