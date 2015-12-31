@@ -9,12 +9,12 @@ import java.util.concurrent.TimeUnit;
  */
 public class RandomIntTest {
 
+        @RandomInt(50)
+        static int test =5;
+
     public static void main(String[] args) throws InterruptedException {
 
         while (true){
-
-            @RandomInt(50)
-            Integer test = null;
 
             System.out.println("test = " + test);
 

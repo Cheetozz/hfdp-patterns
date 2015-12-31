@@ -9,7 +9,7 @@ import java.lang.annotation.Target;
  * Created by Alex on 31.12.2015.
  */
 @Retention(RetentionPolicy.RUNTIME)
-@Target(ElementType.LOCAL_VARIABLE)
+@Target(ElementType.FIELD)
 public @interface RandomInt {
 
     int min() default 0;
